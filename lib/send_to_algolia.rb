@@ -46,7 +46,14 @@ class SendToAlgolia
       ancestor_ids = ancestors.map{|a| a["id"]}
       standard.merge({
         objectID:             standard["id"],
-        ancestorDescriptions: ancestors.map{|a| a["description"]},
+        ancestors: ancestors.map{|a|
+          {
+            id:                a["id"],
+            listId:            a["listId"],
+            description:       a["description"],
+            statementNotation: a["statementNotation"]
+          }
+        },
         educationLevels:      standardSet["educationLevels"],
         subject:              standardSet["subject"],
         normalizedSubject:    standardSet["normalizedSubject"],
