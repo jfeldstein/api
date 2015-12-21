@@ -25,3 +25,5 @@ group :development do
   gem 'guard-shotgun'
   gem 'foreman'
 end
+
+gem 'carmen'

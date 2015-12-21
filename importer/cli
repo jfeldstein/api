@@ -4,6 +4,7 @@ require 'thor'
 require 'fileutils'
 require 'mongo'
 require_relative 'importer'
+require_relative 'exporter'
 
 class ImporterCLI < Thor
 
@@ -40,6 +41,10 @@ class ImporterCLI < Thor
     })
   end
 
+  desc "Dump", "Dump standards to file"
+  def dump
+    Exporter.run
+  end
 
 end
 
